@@ -53,29 +53,33 @@
                 if (pass1 !== pass2) { 
                     passwordErrors.textContent = "Пароли не совпадают"; 
                     passwordErrors.style.display = "block"; 
+                    $("#pass, #repass").css("border-color", "red"); 
                     event.preventDefault(); 
                 } 
-                else if(!/^\w{6,20}/.test(pass1) || !/^\w{6,20}/.test(pass2)) { 
+                else if(pass1.length < 6 || pass2.length < 6) { 
                     passwordErrors.textContent = "Пароль слишком короткий! Пароль должен быть не менее 6 символов!"; 
                     passwordErrors.style.display = "block"; 
+                    $("#pass, #repass").css("border-color", "red");
                     event.preventDefault(); 
                 } 
                 else { 
                     passwordErrors.textContent = ""; 
                     passwordErrors.style.display = "none"; 
+                    $("#pass, #repass").css("border-color", "green"); 
 
                     var User = { 
                     email: email, 
                     password: pass1, 
                     repassword: pass2, 
                     getFullName: function() { 
-                    return this.email + ' $' + this.password + ' $' + this.repassword; 
+                    return 'email: ' + this.email + '\npassword: ' + this.password + '\nconfirm password: ' + this.repassword; 
                     } 
                 }; 
                 console.log(User);
                 console.log(User.getFullName()); 
 
                 $('#successMessage').modal('show');
+                $('#exampleModal').modal('hide');
                 } 
             }); 
  
@@ -101,7 +105,7 @@
                 <div class="modal-body text-center">
                     <h3>Добро пожаловать!</h4>
                     <i class="fa-solid fa-check fa-2xl d-flex justify-content-center py-4 text-success display-2"></i>
-                    <button type="button" class="btn btn-primary mt-3" data-bs-dismiss="modal">close</button>
+                    <button type="button" class="btn btn-primary mt-3" data-bs-dismiss="modal">закрыть</button>
                 </div>
             </div>
         </div>
