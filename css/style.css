@@ -1,0 +1,27 @@
+input { 
+    width: 150px; 
+} 
+ 
+input:invalid { 
+     
+    border: 2px solid red; 
+} 
+ 
+input:valid { 
+    border: 2px solid green; 
+} 
+ 
+#emailErrors, #passwordErrors { 
+    padding:5px; 
+    background-color: #ffcccc;  
+    color:#b33939;  
+    display:none; 
+} 
+ 
+.field-icon { 
+    float: right; 
+    margin-right: 10px; 
+    margin-top: -25px; 
+    position: relative; 
+    z-index: 2; 
+  }
