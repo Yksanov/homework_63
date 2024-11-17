@@ -51,7 +51,7 @@
                  
  
                 if (pass1 !== pass2) { 
-                    passwordErrors.textContent = "Пароли не совпадают"; 
+                    passwordErrors.textContent = "Пароли должны совпадать!"; 
                     passwordErrors.style.display = "block"; 
                     $("#pass, #repass").css("border-color", "red"); 
                     event.preventDefault(); 
